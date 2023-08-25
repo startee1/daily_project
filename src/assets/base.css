@@ -80,3 +80,8 @@ a {
 a:hover {
   color: #999;
 }
+
+ul, li {
+  list-style: none;
+  padding: 0;
+}

@@ -8,6 +8,10 @@
       <header><h1>ANIMATION</h1></header>
       <RouterLink class="link" :to="{name:'tree'}">Tree</RouterLink>
     </section>
+    <section>
+      <header><h1>Data visualization</h1></header>
+      <RouterLink class="link" :to="{name:'dvtable'}">DvTable1</RouterLink>
+    </section>
   </main>
 </template>
 
