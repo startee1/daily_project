@@ -14,7 +14,7 @@ interface ItitleInfo {
 }
 
 let titleInfo:Ititle = {}
-let mydata = [...importdata]
+let mydata = [...importdata.data]
 let data = ref([])
 let interval;
 let time = ref('')
@@ -81,10 +81,10 @@ onMounted(()=>{
       data.value = mydata[count].myvalue
       if(count > 10){
         clearInterval(interval)
-      }
+      }      
       count++;
     }, 200)
-  }, 10000)
+  }, 5000)
 })
 </script>
 
@@ -95,14 +95,14 @@ onMounted(()=>{
         {{ i }} | {{ d.show_name }}
       </div>
       <div style="position: absolute;bottom: 100px;right: 100px;font-size: 28px;">
-        {{ time }}(周四)
+        {{ time }}
       </div>
     </div>
     <div v-if="myshow == 'rank'" style="display: flex;" class="rank">
       <div style="display: none;">
         <div class="title">榜首时间排行</div>
         <ul >
-          <li v-for="(r1,index) in rank10_top1" :key="r1" >
+          <li v-for="(r1, index) in rank10_top1" :key="r1" >
             {{ index + 1 }}: {{ r1.name }}（{{ r1.times }} 分钟）
           </li>
         </ul>
@@ -110,8 +110,8 @@ onMounted(()=>{
       <div>
         <div class="title">前十时间排行</div>
         <ul>
-          <li v-for="r10 in rank10_top10" :key="r10">
-            {{ r10.name }}（{{ r10.times }} 分钟）
+          <li v-for="(r10, index) in rank10_top10" :key="r10">
+            {{ index + 1 }}: {{ r10.name }}（{{ r10.times }} 分钟）
           </li>
         </ul>
       </div>
